@@ -1,0 +1,26 @@
+{
+  "package": "com.lst.level",
+  "name": "水平仪",
+  "versionName": "0.1.beta",
+  "versionCode": 1,
+  "minPlatformVersion": 1000,
+  "icon": "/common/logo.png",
+  "deviceTypeList": [
+    "watch"
+  ],
+  "features": [
+    { "name": "system.sensor" }
+  ],
+  "config": {
+    "logLevel": "log",
+    "designWidth": 480
+  },
+  "router": {
+    "entry": "pages/index",
+    "pages": {
+      "pages/index": {
+        "component": "index"
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+<template>
+  <div onswipe="exit" style="">
+    <text style="position: absolute;width: 180px;height: 32px;left: 150px;top: 17px;">{{time}}</text>
+    <text style=""></text>
+    <div style="width: 480px;height: 480px;align-items: center;">
+      <!-- 度数 -->
+      <text style="position: absolute;left: 183px;bottom:0px;width: 114px;height: 114px;font-size: 60px;align-items: center;transform-origin:57px 57px ;transform: rotate({{start_angle}}deg);">{{deg}}</text>
+      <!-- 最外层圆圈 -->
+      <progress style="total-angle:{{angle_nagative?360:-360}}deg;start-angle:{{(start_angle+180)%360}}deg;color:{{angle==100?'#00B530':'#ff0000'}};" percent="{{angle}}" type="arc"></progress>
+      <!-- 标准小圈/长条，原本是想做动画的才放一起 -->
+      <div style="width: {{isVertical?213:15}}px;border: 2px solid rgba(255, 255, 255, 0.6);transform: rotate({{start_angle}}deg);"></div>
+      <!-- 旋转长条 -->
+      <div style="position: absolute;left: 133px;top: 233px;width: 213px;transform: rotate({{vDeg}}deg);background-color:{{angle==100?'#00B530':'#ff0000'}}" show="{{isVertical}}"></div>
+      <!-- 点 -->
+      <div style="position: absolute;left: {{pointX}}px;top: {{pointY}}px; background-color:{{angle==100?'#00B530':'#ff0000'}}"></div>
+    </div>
+  </div>
+</template>
+
+<script src="./index.js">
+</script>
+
+<style>
+text{
+  font-size: 24px;
+  text-align: center;
+  color: #CCCCCC;
+  font-weight: bold;
+}
+progress{
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  stroke-width:5px;
+  layer-color:rgba(255, 255, 255, 0.6);
+}
+div{
+  justify-content:center;
+  align-items: center;
+  
+}
+div div{
+  border-radius: 999px;
+  width: 15px;
+  height: 15px;
+  transform-origin: 106.5px 7.5px;
+}
+</style>
