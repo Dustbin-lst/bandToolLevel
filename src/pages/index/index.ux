@@ -8,9 +8,9 @@
       <!-- 最外层圆圈 -->
       <progress style="total-angle:{{angle_nagative?360:-360}}deg;start-angle:{{(start_angle+180)%360}}deg;color:{{angle==100?'#00B530':'#ff0000'}};" percent="{{angle}}" type="arc"></progress>
       <!-- 标准小圈/长条，原本是想做动画的才放一起 -->
-      <div style="width: {{isVertical?213:15}}px;border: 2px solid rgba(255, 255, 255, 0.6);transform: rotate({{start_angle}}deg);"></div>
+      <div style="width: {{isVertical?213:30}}px;border: 2px solid rgba(255, 255, 255, 0.6);transform: rotate({{start_angle}}deg);"></div>
       <!-- 旋转长条 -->
-      <div style="position: absolute;left: 133px;top: 233px;width: 213px;transform: rotate({{vDeg}}deg);background-color:{{angle==100?'#00B530':'#ff0000'}}" show="{{isVertical}}"></div>
+      <div style="position: absolute;left: 133px;top: 225px;width: 213px;transform: rotate({{vDeg}}deg);background-color:{{angle==100?'#00B530':'#ff0000'}}" show="{{isVertical}}"></div>
       <!-- 点 -->
       <div style="position: absolute;left: {{pointX}}px;top: {{pointY}}px; background-color:{{angle==100?'#00B530':'#ff0000'}}"></div>
     </div>
@@ -41,8 +41,8 @@ div{
 }
 div div{
   border-radius: 999px;
-  width: 15px;
-  height: 15px;
-  transform-origin: 106.5px 7.5px;
+  width: 30px;
+  height: 30px;
+  transform-origin: 106.5px 15px;
 }
 </style>
